@@ -1,0 +1,21 @@
+install.packages("dplyr")
+require(dplyr)
+##Leer la base de datos
+mundo <- as_tibble(read.csv(file.choose()))
+##Filtrar datos
+ita<-mundo %>%
+          as_tibble() %>%
+  filter(iso_code=="ITA") %>%
+  mutate (acumulado=cumsum(new_cases)) %>%
+  filter(between(new_cases,200000,228000))
+itamax<- mundo %>%
+  as_tibble() %>%
+  filter(between(new_cases,200000,228000))
+table(itamax$location)
+##Filtrar datos para Nicaragua
+nic<-mundo %>%
+  as_tibble() %>%
+  filter(iso_code=="NIC")
+##Sacar maximos
+max(ita$total_cases)
+max(ita$new_cases)
