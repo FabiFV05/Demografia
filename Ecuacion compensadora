@@ -1,0 +1,85 @@
+title: "Ecuación Compensadora"
+author: "Fabiola Fernández"
+date: "16/03/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<center> <h1>Ecuación Compensadora</h1> </center>
+
+Es uno de los principales elementos de la demografìa y se plantea de la siguiente manera:
+$$P_{t+n}=P_{t}+N_{t\rightarrow t+n}-D_{t\rightarrow t+n}+I_{t\rightarrow t+n}-E_{t\rightarrow t+n}$$
+Donde:  
+__N__= Nacimientos  
+__P__= Población  
+__D__=Defuncione  
+__I__=Inmigrantes  
+__E__=Enmigrantes 
+
+$$P_{22}=P_{21}+N_{21\rightarrow 22}-D_{21\rightarrow 22}+I_{21\rightarrow 22}-E_{21\rightarrow 22}$$ 
+Donde:  
+t=2021  
+n= 1  
+
+$$P_{t+n}-P_{t}=(N_{t+n}-D_{t+n})+(I_{t+n}-E_{t+n})$$  
+
+$$CP=CN+CS$$
+Donde:  
+__CP__=Crecimiento poblacional    
+__CN__=Crecimiento natural  
+__CS__=Crecimiento social 
+
+#### -Ejemplo
+
+$$POB_{2004}=293,657,000$$
+$$POB_{2005}=296,410,000$$
+$$N_{2004-2005}=4,129,000$$
+$$D_{2004-2005}=2,425,000$$
+$$I_{2004-2005}=1,122,000$$
+$$E_{2004-2005}=73,000$$
+__Calculamos los crecimientos poblacionales__
+$$CN=4,129,000 - 2,425,000=1,704,000$$
+$$CS=1,122,000 -73,000=1,049,000$$
+$$CP=1,704,000+ 1,049,000=2, 753,000$$
+
+
+<center> <h3>Ecuación compensadora con las nuevas variables de Inmigracion y emigración interna</h3></center>
+
+$$P_{t+n}=P_{t}+N_{t+n}-D_{t+n}+I_{t+n}-E_{t+n}+\hat{I}_{\rightarrow t+n}-\hat{E}_{\rightarrow t+n}$$
+$$CP=CN+CS_{I}+CS_{i}$$
+Donde:    
+__CSi__=Crecimiento social interno    
+__CSI__=Crecimiento social internacional  
+
+
+### Tabla de datos aplicando las formulas antes vistas   
+
+
+|Entidad    |CN      |CSI    |CSi    |CP       |°
+|---------  |--------|-------|-------|---------|
+|EdoMex     |44,441  |49,607 |-12,202|81,846   |
+|Michoacan  |32,585  |44,347 |3,381  |80,313   |
+|Chiapas    |35,065  |30,486 |7,391  |72,942   |
+|Baja Cal   |6,724   |9,364  |-2,653 |13,435   |
+|Nuevo León |18,518  |29,314 |4,996  |52,528   |
+|Jalisco    |2,001   |1,044  |174    |3219     |
+|Sinaloa    |2629    |699    |-2396  |935      |
+|Guanajuato |3,228   |1,940  |1,306  |6,474    |
+|Total      |145,191 |16,689 |0      |319,999  |
+
+-__Tasa de crecimiento anual__
+$$TCA=\frac{P_{t+1}- P_t}{P_t}$$
+-__Tasa de crecimiento exponencial__
+$$TCE=P_t*e^{rn}$$
+Donde:  
+Pt= Poblacion inicial  
+r=Tasa de crecimiento exponencial  
+n=Número de años  
+
+__Hacemos el despeje de la eccuación de tasa de crecimiento exponencial__  
+$$\frac{P_{t+n}}{P_t}=e^{rn}$$
+$$ln(\frac{P_{t+n}}{P_t})=rn$$
+$$\frac{ln(\frac{P_{t+n}}{P_t})}{n}=r$$
