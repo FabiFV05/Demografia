@@ -1,0 +1,101 @@
+---
+title: "Diagrama de Lexis"
+author: "Fabiola Fernández"
+date: "11/3/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<center> <h1>Diagrama de Lexis</h1> </center>
+<div style="text-align: justify">
+
+El digrama de Lexis ayuda a comprender algunos fenomenos y eventos demograficos a traves de una linea de tiempo.
+La __Delimitacion temporal__ en demografía es esencial el tiempo como un elemento indispensable para analizar la dinámica constante  y cambios en espacios poblacionales.
+
+En partcular, en la demografía podemos definir dos tiempos:
+
+  1)__El tiempo calendario__
+  
+  2)__El tiempo de eventos demograficos__
+  
+ Por ejemplo: La edad se puede medir en dos sentidos, por un lado , se mide a partir del nacimiento. Por el otro en años cumplidos(aniversario).
+ 
+ En demografia existe el concepto de edad exacta.
+Este concepto de __edad exacta__ se puede ejemplificar de la siguiente manera:
+
+Supongo que una persona nació en 23 de julio de 1985 y queremos saber su edad exacta al día de hoy, es decir, cuantos años tiene al 11 de marzo de 2022.
+<div/>
+<center>37 años y 262 días $$37+\frac{262}{365}=37$$</center>
+
+Han transcurrido 262 días. 
+<div style="text-align: justify">
+Un elemnto importante que interesa en los fenómenos demográficos es el número de eventos que ocurren a través del tiempo, en este sentido en el diagrama de lexis se puede representar los nacimientos,las defunciones, matrimonios, etc. En este diagrama seran tomados los años calendario y las edades cumplidas.  
+<div/>
+### Conceptos importantes
+
+__Flujo__:con la población que permanece  constanre en el tiempo.  
+__Efectivo__: Ocurrencia de un evento en un evento determinado.  
+__Cohorte__: Un grupo de individuos que experimentan un evento durante un tiempo determinado.  
+__Generacion__: Un grupo de individuos que nace en un determinado tiempo.    
+
+Ahora vamos a plantear algunos eventos demográficos que ocurren en el diagrama planteado
+
+<center>
+__ab__= Nacimientos 1990  
+__ac+bd__= 2Lineas de vida   
+__abc__=Defunciones de 1990  
+__cbd__=Defunciones de 1991  
+</center>
+<div style="text-align: justify">
+
+Digamos que en demografía se pueden plantear tres tipos de análisis
+
+1)__Análisis transversal:__ Se asocia a un momento en el tiempo.  
+2)__Análisis longitudinal:__ Se vincula con estudios a través del tiempo, es decir, análisis de una generación o análisis de una cohorte.  
+3)__Análisis retrospectivos:__ Se vincula con los estudios que se realizan en tiempo pasado, es decir, el análisis de una población adulta mayor durante su juventud.  
+
+En particular vamos a ver  el análisis longitudinal que se relaciona con el diagrama, uno de los aspectos importantes del diagrama de lexis tiene que ver con el analisis longitudinal.
+Por ejemplo, los nacimientos, las defunciones, las nupcialidad se les llama eventos demográficos, de estos eventos surgen fenómenos demográficos como la fecundidad, la mortalidad y la migración.
+
+### Medidas en demografía
+##### __Medidas Relativas__
+
+*__Razones:__ Es el cociente entre dos magnitudes independientes.  
+Por ejemplo:
+<div>
+$$\frac{\text{Población masculina}}{\text{Población femenina}}$$ _Cuantos hombres hay con repectos a las mujeres._
+
+*__Proporciones:__ Es la relación entre dos medidas de efectivos o flujos.  
+Ejemplo:
+$$\frac{\text{Población masculina}}{\text{Población total}}$$ _Proporción de hombres con respecto a la población total._  
+$$\frac{\text{Nacimientos Hombres}}{\text{Nacimientosa Totales}}$$ _Número de hombres por cada nacimiento ocurrido._  
+
+*__Tasa:__ Es el cociente entre el flujo y un efectivo.  
+Ejemplo:
+$$\frac{\text{Nacimientos en un año}}{\text{Población total}}$$
+El flujo son datos a través del tiempo y el efectivo son datos en un momento especifíco en el tiempo.
+
+#### Ejemplos
+-__Razón__
+$$\frac{\text{Población masculina}}{\text{Población femenina}}=\frac{45421}{461885}=98.3$$ _Por cada 100 mujeres hay 98.3 hombres._   
+Pob M=45421      
+POB F=46185  
+
+-__Proporción__ 
+$$\frac{\text{Población masculina}}{\text{Población total}}=\frac{45421}{91601}=.4958$$ _La población de hombres es de .49, en porcentaje por cada 100 habitantes hay 49 hombres._   
+Pob M=45421    
+Pob Total=91601    
+
+-__Tasas__
+$$\frac{\text{Nacimientos en un año}}{\text{Población total}}=\frac{2298}{92393}=.002478$$ _Multiplicarlo por 1000 y por cada 1000 habitantes nacen 84 personas._    
+_NACIMIENTOS_=2,298  
+_POB_=9,2393  
+
+__Tasas de crecimeinto poblacional__
+$$TCP=\frac{\text{Nacimientos- Defunciones}}{\text{Población total a mitad de año}}=\frac{2290-420}{92394}=.202$$ _Si lo multiplicamos por 100, se inteepreta que por cada 100 habitantes hay un incremento de 20 personas._      
+Ejemplo:  
+Nacimientos=2290  
+Defunciones=420  
+Pob=92394 
