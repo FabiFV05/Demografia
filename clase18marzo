@@ -1,0 +1,38 @@
+##Hacer vectores y operaciones 
+ent<- c("edomex","dmx","chiap")
+nac<- c(184447,65703,98098)
+def<- c(131133,132751,38662)
+head(CN)
+CN<- nac-def
+inmI<- c(30788,18813,4986)
+emiI<- c()
+inminternos<- c(5190562,1679063,174961)
+eminternos<- c(1344291,4955432,678362	)
+CSi<- inminternos-eminternos
+head(CSi)
+------------------------------------------
+title: "Tablas en Rmarckdowm"
+autor: "Fabiola Fernández"
+output: html_document
+date: '2022-03-18'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+install.packages("printr")
+require(printr)
+a<- c(1,2,3)
+b <- c("a","b","c")
+data<- data.frame(a,b)
+
+```{r cars}
+summary(cars)
+install.packages("printr")
+require(printr)
+a<- c(1,2,3)
+b <- c("a","b","c")
+data<- data.frame(a,b)
+table(data)
+```
