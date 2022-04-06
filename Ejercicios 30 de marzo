@@ -1,0 +1,53 @@
+---
+title: "Ejercicios"
+output: html_document
+date: '2022-03-30'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+### Ejercicios   
+ __Aguascalientes__  
+__Población total__= 1425607  
+__Nacimientos__=20370  
+__Inmigracion__ =56422  
+__Emigracion__=23665  
+__Mortalidad__=9923  
+
+#### Tasas brutas   
+$$TBM=\frac{9,923}{1,425,607}=0.006960544*1000= 6.960544$$
+Por cada mil personas en Aguascalientes en el periodo 2010-2020 mueren 6 personas.  
+$$TBN=\frac{20,370}{1,425,607}= 0.01428865*1000=14.28865$$
+Por cada mil personas en aguascalientes en el periodo 2010-2020 nacen 14 personas.  
+$$TBE=\frac{144,612}{1,425,607}= 0.1014389*1000=101.4389$$
+Por cada mil personas en Aguascalientes en el periodo 2010-2020 hay 101 personas emigrantes.  
+$$TBI=\frac{276,430}{1,425,607}= 0.1939034*1000=193.9034$$
+Por cada mil personas en aguascalientes en el periodo 2010-2020 hay 193 inmigrantes.  
+
+### Proporción de sexos al nacimiento 
+
+La proporción de sexos al nacimiento se define de la siguiente manera:
+$$PSN=\frac{nac_h}{nac_m}$$
+$$PSN_{mx}=\frac{828944}{800264}=1.035838$$
+_Si multiplico por 1000_    
+$$PSN_{mx}=103$$ 
+En México en el año 2020 nacen 103 niños por cada 100 niñas.  
+
+### Proporción de niñas por mujer  
+$$PNM=\frac{POB_{<5años}}{\text{Población femenina }}$$
+$$POB_{<5años}=2,827,374$$
+$$\text{Población femenina} (15-44)=23,855,033$$
+$$PNM=\text{2,827,374}{23,855,033}=0.1185232*100=11.85232$$
+
+### Tasa de dependencia 
+La tasa de dependencia se relaciona a las personas que tienen más posibilidades de ser dependientes
+$$TD=\frac{POB_{0-14}+POB_{65+}}{POB_15-64}$$
+-------------------------R SCRIPT----------------------------------------------------------------
+entidades<-c("ags","edomex","chiapas")
+tbn<-c(0.0142886,0.01080,0.0394924)
+tbm<-c(0.0069605,0.0089,0.02247131)
+tbi<-c(0.1939034,0.034,0.0449061)
+tbe<- c(0.101418,0.079,0.1270692)
+base<- data.frame(entidades,tbn,tbm,tbi,tbe)
+baseee<-data.frame(entidades,base[2:5]*100)
