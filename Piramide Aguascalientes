@@ -1,0 +1,112 @@
+title: "clase 8 abril"
+output: html_document
+date: '2022-04-08'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+install.packages("pyramid")
+require(pyramid)
+ags<- read.csv(file.choose())
+install.packages("dplyr")
+require(dplyr)
+ags2<- ags %>%
+as_tibble() %>%
+mutate(gpoeda=case_when(EDAD>=0 & EDAD<=4~ 1,
+EDAD>=5 & EDAD<=9~ 2,
+EDAD>=10 & EDAD<=14~ 3,
+EDAD>=15 & EDAD<=19~ 4,
+EDAD>=20 & EDAD<=24~ 5,
+EDAD>=25 & EDAD<=29~ 6,
+EDAD>=30 & EDAD<=34~ 7,
+EDAD>=35 & EDAD<=39~ 8,
+EDAD>=40 & EDAD<=44~ 9,
+EDAD>=45 & EDAD<=49~ 10,
+EDAD>=50 & EDAD<=54~ 11,
+EDAD>=55 & EDAD<=60~12,
+EDAD>=60 & EDAD<=130~ 13,
+EDAD==999~ 14 ))
+table(ags2$gpoeda)
+
+
+agsm<- ags %>%
+as_tibble() %>%
+mutate(gpoeda=case_when(EDAD>=0 & EDAD<=4~ 1,
+EDAD>=5 & EDAD<=9~ 2,
+EDAD>=10 & EDAD<=14~ 3,
+EDAD>=15 & EDAD<=19~ 4,
+EDAD>=20 & EDAD<=24~ 5,
+EDAD>=25 & EDAD<=29~ 6,
+EDAD>=30 & EDAD<=34~ 7,
+EDAD>=35 & EDAD<=39~ 8,
+EDAD>=40 & EDAD<=44~ 9,
+EDAD>=45 & EDAD<=49~ 10,
+EDAD>=50 & EDAD<=54~ 11,
+EDAD>=55 & EDAD<=60~12,
+EDAD>=60 & EDAD<=130~ 13,
+EDAD==999~ 14 ))%>%
+filter(SEXO==3)
+table(agsm$gpoeda)
+
+
+agsh<- ags %>%
+as_tibble() %>%
+mutate(gpoeda=case_when(EDAD>=0 & EDAD<=4~ 1,
+EDAD>=5 & EDAD<=9~ 2,
+EDAD>=10 & EDAD<=14~ 3,
+EDAD>=15 & EDAD<=19~ 4,
+EDAD>=20 & EDAD<=24~ 5,
+EDAD>=25 & EDAD<=29~ 6,
+EDAD>=30 & EDAD<=34~ 7,
+EDAD>=35 & EDAD<=39~ 8,
+EDAD>=40 & EDAD<=44~ 9,
+EDAD>=45 & EDAD<=49~ 10,
+EDAD>=50 & EDAD<=54~ 11,
+EDAD>=55 & EDAD<=60~12,
+EDAD>=60 & EDAD<=130~ 13,
+EDAD==999~ 14 ))%>%
+filter(SEXO==1)
+table(agsh$gpoeda)
+DATOSMA <- c(4760,4737,4536,4799,4329,3970,3557,3423,3217,2725,2374,2305,4367 )
+DATOSH <- c(4727,4791,4848,4708,4193,3718,3195,3108,2859,2568,2067,2135,3967)
+GEDAD<- c('0-4','5-9','10-14','15-19','20-24','25-29','30-34','35-39','40-44','45-49','50-54','55-60','60-130')
+piraguas<- data.frame(GEDAD,DATOSMA,DATOSH)
+names(DATOSH) <- c('0-4','5-9','10-14','15-19','20-24','25-29','30-34','35-39','40-44','45-49','50-54','55-60','60-130')
+
+
+x11()
+pyramids(Left=DATOSH,Llab="Hombres",Right=DATOSMA,Rlab="Mujeres",Clab="Grupo de edad", Laxis= c(0,2000,4000,6000),Csize=1, main="Gráfica 2. Pirámide Poblacional de Aguascalientes",Lcol="blue",Rcol="purple")
+
+
+
+ggplot(ags2, aes(x = `gpoeda`,
+                y = `ENT`,
+                fill = SEXO)) +
+  geom_col(data = subset(ags2, SEXO == 1) %>% 
+             mutate(`ENT` = -`ENT`),
+              width = 0.5, fill = "blue") +
+  geom_col(data = subset(ags2, SEXO == 3),
+           width = 0.5, fill = "pink") + 
+  coord_flip()
+  
+  
+  DATOSMH<- c(4760,4737,4536,4799,4329,3970,3557,3423,3217,2725,2374,2305,4367,4727,4791,4848,4708,4193,3718,3195,3108,2859,2568,2067,2135,3967)
+  SEXO <- c(3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1)
+  piraguas2<- data.frame(DATOSMH,SEXO,GEDAD)
+  
+  ggplot(piraguas2, aes(x = `GEDAD`,
+                y = `DATOSMH`,
+                fill= SEXO)) +
+  geom_col(data = subset(piraguas2, SEXO == 1) %>% 
+             mutate(`DATOSMH` = -`DATOSMH`),
+              width = 0.5, fill = "blue") +
+  geom_col(data = subset(piraguas2, SEXO == 3),
+           width = 0.5, fill = "pink") + 
+  coord_flip()+
+     scale_y_continuous(
+     breaks = c(seq(-10000, -2000, by = 2000), 
+                seq(0, 10000, by = 2000)),
+     labels = c(seq(-10000, -2000, by = 2000) * -1, 
+                seq(0, 10000, by = 2000))) 
+  
