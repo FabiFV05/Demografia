@@ -1,0 +1,35 @@
+---
+title: "Tarea fecundidad"
+output: html_document
+date: '2022-04-21'
+author: "Fabiola Fernández Villalva"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<center> <h1>Fecundidad</h1> </center>
+<div style="text-align: justify">
+__Instrucciones:__ Realizar los cálculos para responder a la pregunta ¿Cuántos hijos puede tener una mujer durate su vida fertil?. Suponga que inicia a los 15 años y termina a los 45 años.  
+-Sea __x__ la edad inicial.  
+-Sea __y__ la edad final.  
+-Sea __p__ periodo de embarazo de una mujer aproximado.  
+-Sea __d__ el número de días de descanso para volver a embarazarse(40 dias recomendado).  
+_Para fines de conveniencia se usa un calendario de 360 días._ 
+<div/>
+
+
+fecundidad <- function(x,y,a,d){
+ (y-x)
+ di<- (y-x)*360
+ (d*30)+40
+ (y-x)*360/((d*30)+40)
+ round((y-x)*360/((d*30)+40))
+}
+
+fecundidad(15,45,40,9)
+
+
+<div style="text-align: justify">
+De acuerdo a la función realizada para calcular la fecundidad , tenemos que para este ejercicio una mujer puede embarzarse hasta __35 veces__ o tener __35 hijos__ en todo su periodo de vida fertil.
+<div/>
