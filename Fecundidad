@@ -1,0 +1,77 @@
+title: "clase 20 de abril"
+output: html_document
+date: '2022-04-20'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<div style="text-align: justify">
+## Fecundidad
+ En la demografía existen dos conceptos que es necsario diferenciar.
+ La __Fecundidad__ se refiere al número de hijos que tienen las mujeres.  
+La __Fertilidad__ se refiere la capacidad biológica de la mujer de tener hijos.
+Fcatores que impactan en la fecundidad de las mujeres:
+-Ecónomica  
+-Cultura  
+-Familia  
+-Estado Civil  
+-Fisiológicos  
+-Acceso a anticonceptivos   
+-Morbilidad  
+-Educación    
+-Mercado de trabajo  
+-Politícas públicas (Ley General de Población en México)
+
+### Tasa bruta de natalidad 
+$$TBN=\frac{Nacimientos}{Población}$$
+Normalmente esta TBN se utiliza de manera anual y se interpreta en miles de personas.
+#### Ejemplo
+Nacimientos= 470,900
+Población=27,720,000
+$$TBN=\frac{ 470,900}{27,720,000}=0.017$$
+La TBN también se puede interpretar multiplicandola se puede interpretar multiplicandola  por 1000, es decir, que en esta población nacen 17  niños por cada mil personas.
+¿Cuántos hijos puede tener una mujer durante su periodo de fertilidad?
+Suponemos que inicia a los 15 años y termina a los 45 años.
+
+### Tasas especifícas de fecundidad 
+*Generales de Fecundidad 
+La tasa especifica de fecundidad se define de la siguiente manera:
+
+$$Tef=\frac{Nacimiento^{i}}{Pob^{i}femenina }$$
+##### Ejemplo
+GEDAD <- c ("15-19","20-24","25-29","30-34","35-39","40-44")
+  Nacidos_vivos <- c(14687,116809,307767,389795,209707,31270)
+Pobf <- c (2974000,3404000,3688000,4286000,4776000,4243000)
+Tef <- c(4.938467, 34.31522, 83.45092, 90.9461, 43.9085,7.369786)
+Tasas especifica de fecundidad
+(14687/2974000)*1000
+(116809/3404000)*1000
+(307767/3688000)*1000
+(389795/4286000)*1000
+(209707/4776000)*1000
+(31270/4243000)*1000
+
+Ej_fec <- data.frame(GEDAD,Nacidos_vivos,Pobf,Tef)
+
+### Tasa General de Fecundidad
+$$TGF=\frac{\sum_{i=15}^{44}nacimientos^{i}}{\sum_{i=15}^{44}Pob^{i}femenina}$$
+##### Ejemplo
+$$TGF=\frac{1,070,035}{23,371,000}=0.04578$$
+45.70 nacimientos por cada mil mujeres en edad de 15-44 años.
+
+##EJERCICIO
+GEDADM<- c( "15-19","20-24","25-29","30-34","35-39","40-44")
+NACIDOSV <-c (464102,748723,624181,418695,205503,49430)
+POBFE <- c(5505991,5079067,4582202,4444767,4328249,3658904)
+TefM <- c (84.29037,147.4135,136.2186,94.19954, 47.47948,13.50951)
+(464102/5505991)*1000
+(748723/5079067)*1000
+(624181/4582202)*1000
+(418695/4444767)*1000
+(205503/4328249)*1000
+(49430/3658904)*1000
+
+Ej_fecmexi <- data.frame(GEDADM,NACIDOSV,POBFE,TefM)
+
+<div/>
